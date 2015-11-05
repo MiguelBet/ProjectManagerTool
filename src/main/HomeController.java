@@ -12,18 +12,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import main.Main;
-import javafx.application.Application;
 
 public class HomeController implements Initializable
 {
@@ -58,7 +54,6 @@ public class HomeController implements Initializable
         stage.setScene(scene);
         stage.show();
     }
-    Stage prevStage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
