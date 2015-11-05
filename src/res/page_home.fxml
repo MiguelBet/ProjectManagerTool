@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.*?>
-<GridPane alignment="center" hgap="10" prefHeight="2213.0" prefWidth="1725.0" vgap="10"
-          xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeController">
+
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeController">
+
     <columnConstraints>
-        <ColumnConstraints/>
+        <ColumnConstraints prefWidth="650.0" />
     </columnConstraints>
+
     <rowConstraints>
-        <RowConstraints/>
-        <RowConstraints/>
+        <RowConstraints prefHeight="400.0" />
+        <RowConstraints />
     </rowConstraints>
-    <ScrollPane prefHeight="2202.0" prefWidth="1725.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
-        <HBox prefHeight="2202.0" prefWidth="1425.0">
-            <VBox fx:id="projectNameVbox" alignment="TOP_LEFT" prefHeight="2202.0" prefWidth="575.0"
-                  HBox.hgrow="SOMETIMES"/>
-            <VBox fx:id="projectManagerVbox" alignment="TOP_CENTER" prefHeight="2202.0" prefWidth="575.0"
-                  HBox.hgrow="SOMETIMES"/>
-            <VBox fx:id="viewButtonsVbox" alignment="TOP_RIGHT" prefHeight="2202.0" prefWidth="575.0"
-                  HBox.hgrow="SOMETIMES"/>
-        </HBox>
-    </ScrollPane>
+   <children>
+   
+       <ScrollPane hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0" vbarPolicy="AS_NEEDED">
+      <content>
+              <HBox prefHeight="400.0" prefWidth="600.0">
+                 <children>
+                     <VBox fx:id="projectNameVbox" alignment="TOP_LEFT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <Label alignment="CENTER" text="Project Name" textFill="BLUE">
+                           <font>
+                              <Font name="Verdana Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                     <VBox fx:id="projectManagerVbox" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <Label alignment="CENTER" text="Project Manager" />
+                     </children>
+                  </VBox>
+                     <VBox fx:id="viewButtonsVbox" alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <Button fx:id="viewProjectButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Add Project" />
+                     </children>
+                  </VBox>
+                 </children>
+              </HBox>
+      </content>
+   
+       </ScrollPane>
+   </children>
 </GridPane>
