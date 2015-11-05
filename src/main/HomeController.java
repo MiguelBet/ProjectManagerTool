@@ -34,35 +34,42 @@ public class HomeController implements Initializable
     private VBox projectManagerVbox;
     @FXML
     private VBox viewButtonsVbox;
-
-    public final static double CELL_MIN_HEIGHT = 40;
-
-    Stage prevStage;
-/*
-    @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException
-    {
-        Parent viewProjectParent = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
-        Scene viewProjectScene = new Scene(viewProjectParent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    }*/
-
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        setHeader();
-    }
     @FXML
     private Button viewProjectButton;
 
-    private Main main;
+    public final static double CELL_MIN_HEIGHT = 40;
+
+    @FXML
+    public void handleButtonAction(ActionEvent event) throws IOException{
+        Stage stage;
+        Parent root;
+        if(event.getSource()==viewProjectButton){
+            //get reference to the button's stage
+            stage=(Stage) viewProjectButton.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
+        }
+        else{
+            stage=(Stage) viewProjectButton.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
+        }
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    Stage prevStage;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        setHeader();
+    }
 
     public void setHeader() {
         HBox projectNameContainer = new HBox();
         HBox projectManagerContainer = new HBox();
         HBox viewProjectContainer = new HBox();
-        main = new Main();
 
         projectNameContainer.setMinHeight(CELL_MIN_HEIGHT);
         projectManagerContainer.setMinHeight(CELL_MIN_HEIGHT);
@@ -86,13 +93,6 @@ public class HomeController implements Initializable
         viewProjectContainer.setAlignment(Pos.CENTER_RIGHT);
         viewProjectContainer.setPadding(new Insets(0, 20, 0, 0));
         viewProjectButton.setOnAction(event -> addNewProject(new SoftwareProject("Test", "Test")));
-
-        //viewProjectButton.setOnAction(event -> main.projectViewScene());
-        /*if (viewProjectButton.isPressed())
-        {
-            main.stage.setScene(projectViewScene());
-        }*/
-
 
         projectNameVbox.getChildren().add(projectNameContainer);
         projectManagerVbox.getChildren().add(projectManagerContainer);
@@ -144,60 +144,4 @@ public class HomeController implements Initializable
         projectManagerVbox.getChildren().add(separator2);
         viewButtonsVbox.getChildren().add(separator3);
     }
-
-
-/*
-    public scene ViewProjectScene () throws IOException
-    {
-        Stage stage = new Stage();
-        stage.setTitle("PMT 3000");
-        Pane projectViewPane = null;
-        projectViewPane = FXMLLoader.load(getClass().getResource(".../res/page_project_view.fxml"));
-        Scene scene = new Scene (projectViewPane);
-        stage.setScene(scene);
-
-        prevStage.close();
-
-        stage.show();
-
-    }*/
-
-   /* public Scene viewProjectScene ()
-    {
-        Parent root = null;
-
-        root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
-
-        return new Scene(root);
-    }*/
-    public void setPrevStage (Stage stage)
-    {
-        this.prevStage = stage;
-    }
-
-    public void setMain (Main myMain)
-    {
-        this.main = myMain;
-    }
-
-    @FXML
-    public void handleButtonAction(ActionEvent event) throws IOException{
-        Stage stage;
-        Parent root;
-        if(event.getSource()==viewProjectButton){
-            //get reference to the button's stage
-            stage=(Stage) viewProjectButton.getScene().getWindow();
-            //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
-        }
-        else{
-            stage=(Stage) viewProjectButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
-        }
-        //create a new scene with root and set the stage
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
 }
