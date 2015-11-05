@@ -87,7 +87,7 @@ public class HomeController implements Initializable
         viewProjectContainer.getChildren().addAll(viewProjectButton);
         viewProjectContainer.setAlignment(Pos.CENTER_RIGHT);
         viewProjectContainer.setPadding(new Insets(0, 20, 0, 0));
-        viewProjectButton.setOnAction(event -> addNewProject(new SoftwareProject("Test", "Test")));
+        viewProjectButton.setOnAction(event -> addNewProject(new SoftwareProject("Test", "Test", 52)));
 
         projectNameVBox.getChildren().add(projectNameContainer);
         projectManagerVBox.getChildren().add(projectManagerContainer);
