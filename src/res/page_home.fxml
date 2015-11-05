@@ -23,7 +23,7 @@
       <content>
               <HBox prefHeight="400.0" prefWidth="600.0">
                  <children>
-                     <VBox fx:id="projectNameVbox" alignment="TOP_LEFT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <VBox fx:id="projectNameVBox" alignment="TOP_LEFT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
                      <children>
                         <Label alignment="CENTER" text="Project Name" textFill="BLUE">
                            <font>
@@ -32,12 +32,12 @@
                         </Label>
                      </children>
                   </VBox>
-                     <VBox fx:id="projectManagerVbox" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <VBox fx:id="projectManagerVBox" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
                      <children>
                         <Label alignment="CENTER" text="Project Manager" />
                      </children>
                   </VBox>
-                     <VBox fx:id="viewButtonsVbox" alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <VBox fx:id="viewButtonsVBox" alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
                      <children>
                         <Button fx:id="viewProjectButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Add Project" />
                      </children>
