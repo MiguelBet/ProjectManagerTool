@@ -7,7 +7,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeController">
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeController">
 
     <columnConstraints>
         <ColumnConstraints prefWidth="650.0" />
@@ -19,32 +19,23 @@
     </rowConstraints>
    <children>
    
-       <ScrollPane hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0" vbarPolicy="AS_NEEDED">
-      <content>
-              <HBox prefHeight="400.0" prefWidth="600.0">
-                 <children>
-                     <VBox fx:id="projectNameVBox" alignment="TOP_LEFT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+       <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vbarPolicy="AS_NEEDED">
+         <content>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0">
                      <children>
-                        <Label alignment="CENTER" text="Project Name" textFill="BLUE">
-                           <font>
-                              <Font name="Verdana Bold" size="18.0" />
-                           </font>
-                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Title" />
+                        <Separator orientation="VERTICAL" prefHeight="50.0" visible="false" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Manager" />
+                        <Separator layoutX="400.0" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0" visible="false" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Add Project" textAlignment="CENTER" />
                      </children>
-                  </VBox>
-                     <VBox fx:id="projectManagerVBox" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
-                     <children>
-                        <Label alignment="CENTER" text="Project Manager" />
-                     </children>
-                  </VBox>
-                     <VBox fx:id="viewButtonsVBox" alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
-                     <children>
-                        <Button fx:id="viewProjectButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Add Project" />
-                     </children>
-                  </VBox>
-                 </children>
-              </HBox>
-      </content>
+                  </HBox>
+                  <Separator prefWidth="600.0" visible="false" />
+               </children>
+            </VBox>
+         </content>
    
        </ScrollPane>
    </children>

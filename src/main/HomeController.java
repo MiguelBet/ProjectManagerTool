@@ -58,7 +58,7 @@ public class HomeController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        setHeader();
+        //setHeader();
     }
 
     public void setHeader() {
