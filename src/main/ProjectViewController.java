@@ -1,27 +1,23 @@
 package main;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.application.Application;
-import javafx.geometry.Insets;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.swing.text.Position;
-import java.awt.*;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
 
 public class ProjectViewController {
 
@@ -42,6 +38,30 @@ public class ProjectViewController {
     @FXML
     private HBox projectActualDateHBox;
 
+    @FXML
+    private Button addProjectButton;
+
+    @FXML
+    public void addProjectButtonAction(ActionEvent event) throws IOException
+    {
+        Stage stage;
+        Parent root;
+        if(event.getSource()== addProjectButton)
+        {
+            //get reference to the button's stage
+            stage=(Stage) addProjectButton.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
+        }
+        else{
+            stage=(Stage) addProjectButton.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
+        }
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
     public void setPage ()

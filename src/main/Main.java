@@ -20,8 +20,8 @@ public class Main extends Application{
         stage = primaryStage;
         stage.setTitle("PMT 3000");
         primaryStage.setScene(homeScene());
-        primaryStage.setMaxWidth(600);
-        primaryStage.setMaxHeight(400);
+        primaryStage.setMaxWidth(750);
+        primaryStage.setMaxHeight(450);
         primaryStage.show();
         HC = new HomeController();
     }

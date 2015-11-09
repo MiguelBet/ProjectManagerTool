@@ -23,13 +23,13 @@
          <content>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
                <children>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0">
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Title" />
-                        <Separator orientation="VERTICAL" prefHeight="50.0" visible="false" />
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Manager" />
-                        <Separator layoutX="400.0" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0" visible="false" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Add Project" textAlignment="CENTER" />
+                        <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="0.0" visible="false" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Manager" />
+                        <Separator layoutX="400.0" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefHeight="50.0" prefWidth="0.0" visible="false" />
+                        <Button fx:id="newProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#newProjectButtonAction" text="Add Project" textAlignment="CENTER" />
                      </children>
                   </HBox>
                   <Separator prefWidth="600.0" visible="false" />

@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,22 +32,23 @@ public class HomeController implements Initializable
     @FXML
     private VBox viewButtonsVBox;
     @FXML
-    private Button viewProjectButton;
+    private Button newProjectButton;
 
     public final static double CELL_MIN_HEIGHT = 40;
 
     @FXML
-    public void handleButtonAction(ActionEvent event) throws IOException{
+    public void newProjectButtonAction(ActionEvent event) throws IOException
+    {
         Stage stage;
         Parent root;
-        if(event.getSource()==viewProjectButton){
+        if(event.getSource()== newProjectButton){
             //get reference to the button's stage
-            stage=(Stage) viewProjectButton.getScene().getWindow();
+            stage=(Stage) newProjectButton.getScene().getWindow();
             //load up OTHER FXML document
             root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
         }
         else{
-            stage=(Stage) viewProjectButton.getScene().getWindow();
+            stage=(Stage) newProjectButton.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("../res/page_project_view.fxml"));
         }
         //create a new scene with root and set the stage
@@ -83,11 +85,11 @@ public class HomeController implements Initializable
         projectManagerContainer.setAlignment(Pos.CENTER);
         projectManagerContainer.getChildren().addAll(projectManager);
 
-        viewProjectButton = new Button("Add Project");
-        viewProjectContainer.getChildren().addAll(viewProjectButton);
+        newProjectButton = new Button("Add Project");
+        viewProjectContainer.getChildren().addAll(newProjectButton);
         viewProjectContainer.setAlignment(Pos.CENTER_RIGHT);
         viewProjectContainer.setPadding(new Insets(0, 20, 0, 0));
-        viewProjectButton.setOnAction(event -> addNewProject(new SoftwareProject("Test", "Test", 52)));
+        newProjectButton.setOnAction(event -> addNewProject(new SoftwareProject("Test", "Test", 52)));
 
         projectNameVBox.getChildren().add(projectNameContainer);
         projectManagerVBox.getChildren().add(projectManagerContainer);
