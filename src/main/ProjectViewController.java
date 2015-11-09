@@ -38,30 +38,13 @@ public class ProjectViewController {
     @FXML
     private HBox projectActualDateHBox;
 
+    HBox buttonsHBox;
+    String projectName;
+
     @FXML
     private Button addProjectButton;
 
-    @FXML
-    public void addProjectButtonAction(ActionEvent event) throws IOException
-    {
-        Stage stage;
-        Parent root;
-        if(event.getSource()== addProjectButton)
-        {
-            //get reference to the button's stage
-            stage=(Stage) addProjectButton.getScene().getWindow();
-            //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
-        }
-        else{
-            stage=(Stage) addProjectButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
-        }
-        //create a new scene with root and set the stage
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+
 
 
     public void setPage ()
@@ -75,6 +58,7 @@ public class ProjectViewController {
         projectStartDateHBox = new HBox();
         projectExpectedDateHBox = new HBox();
         projectActualDateHBox = new HBox();
+        buttonsHBox = new HBox();
 
         VBox projectViewMainContainer = new VBox();
         projectViewMainContainer.setMinWidth(600);
@@ -94,7 +78,7 @@ public class ProjectViewController {
         final TextField projectNameTextField = new TextField();
         projectNameTextField.setPrefWidth(360);
         projectNameTextField.setPrefHeight(36);
-        projectNameTextField.getText();
+        projectName = new String(projectNameTextField.getText());
         projectNameHBox.getChildren().addAll(projectNameLabel);
         projectNameHBox.getChildren().add(projectNameTextField);
         projectViewMainContainer.getChildren().addAll(projectNameHBox);
@@ -106,7 +90,7 @@ public class ProjectViewController {
         final TextField proNumofTeamTx = new TextField();
         proNumofTeamTx.setPrefWidth(230);
         proNumofTeamTx.setPrefHeight(36);
-        proNumofTeamTx.getText();
+        String projectNumberOfTeam = new String(proNumofTeamTx.getText());
         projectNumberOfTeamHBox.getChildren().addAll(proNumofTeam);
         projectNumberOfTeamHBox.getChildren().add(proNumofTeamTx);
         projectViewMainContainer.getChildren().addAll(projectNumberOfTeamHBox);
@@ -183,7 +167,36 @@ public class ProjectViewController {
         projectActualDateHBox.getChildren().add(projectActualDateTextField);
         projectViewMainContainer.getChildren().addAll(projectActualDateHBox);
 
+        buttonsHBox.setPrefHeight(36);
+        buttonsHBox.getChildren().add(addProjectButton);
+
     }
+    @FXML
+    public void addProjectButtonAction(ActionEvent event, String string1, String string2) throws IOException
+    {
+        string1 = this.projectName;
+        string2 = this.projectName;
+        SoftwareProject softwareproject = new SoftwareProject (string1,string2,5);
+        Stage stage;
+        Parent root;
+        if(event.getSource()== addProjectButton)
+        {
+            //get reference to the button's stage
+            stage=(Stage) addProjectButton.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
+        }
+        else{
+            stage=(Stage) addProjectButton.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
+        }
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 }
 
 

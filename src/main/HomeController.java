@@ -37,7 +37,7 @@ public class HomeController implements Initializable
     public final static double CELL_MIN_HEIGHT = 40;
 
     @FXML
-    public void newProjectButtonAction(ActionEvent event) throws IOException
+    public void addProjectButtonAction(ActionEvent event) throws IOException
     {
         Stage stage;
         Parent root;

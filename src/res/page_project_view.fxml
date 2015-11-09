@@ -63,7 +63,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0">
          <children>
-            <Button fx:id="addProjectButton" mnemonicParsing="false" onAction="#addProjectButtonAction" text="Add Project" />
+            <Button fx:id="addProjectButton" mnemonicParsing="false" onAction="#addProjectButtonAction" text="Add Project"/>
          </children>
       </HBox>
    </children>
