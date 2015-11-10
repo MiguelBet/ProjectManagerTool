@@ -1,27 +1,21 @@
 package main;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class ProjectViewController {
 
-    @FXML
+    /*@FXML
     private HBox projectNameHBox;
     @FXML
     private HBox projectNumberOfTeamHBox;
@@ -36,7 +30,22 @@ public class ProjectViewController {
     @FXML
     private HBox projectExpectedDateHBox;
     @FXML
-    private HBox projectActualDateHBox;
+    private HBox projectActualDateHBox;*/
+
+    @FXML public TextField projectNameTextField;
+    @FXML public TextField projectManagerTextField;
+    @FXML public TextField projectNumberOfTeamMembersTextField;
+    @FXML public TextField projectNameOfTeamMembersTextField;
+    @FXML public TextField projectCurrentStatusTextField;
+    @FXML public TextField projectHoursTextField;
+    @FXML public TextField projectStartDateTextField;
+    @FXML public TextField projectExpectedDateTextField;
+    @FXML public TextField projectActualDateTextField;
+
+    public HomeController hc;
+
+
+    private ObservableList <SoftwareProject> softwareProject;
 
     HBox buttonsHBox;
     String projectName;
@@ -46,8 +55,7 @@ public class ProjectViewController {
 
 
 
-
-    public void setPage ()
+    /*public void setPage ()
     {
 
         projectNameHBox = new HBox();
@@ -170,13 +178,21 @@ public class ProjectViewController {
         buttonsHBox.setPrefHeight(36);
         buttonsHBox.getChildren().add(addProjectButton);
 
-    }
-    @FXML
-    public void addProjectButtonAction(ActionEvent event, String string1, String string2) throws IOException
+    }*/
+
+    public SoftwareProject newSoftwareProject()
     {
-        string1 = this.projectName;
-        string2 = this.projectName;
-        SoftwareProject softwareproject = new SoftwareProject (string1,string2,5);
+        SoftwareProject sp = new SoftwareProject(projectNameTextField.getText(),projectManagerTextField.getText(),projectNumberOfTeamMembersTextField.getText(),
+                projectCurrentStatusTextField.getText(),projectHoursTextField.getText(),projectStartDateTextField.getText(),projectExpectedDateTextField.getText(),projectActualDateTextField.getText());
+
+        return sp;
+    }
+    
+    @FXML
+    public void addProjectButtonAction(ActionEvent event) throws IOException
+    {
+        hc = new HomeController();
+        hc.addNewProject(newSoftwareProject());
         Stage stage;
         Parent root;
         if(event.getSource()== addProjectButton)

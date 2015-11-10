@@ -10,18 +10,18 @@
 <GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeController">
 
     <columnConstraints>
-        <ColumnConstraints prefWidth="650.0" />
+        <ColumnConstraints prefWidth="600.0" />
     </columnConstraints>
 
     <rowConstraints>
-        <RowConstraints prefHeight="400.0" />
+        <RowConstraints prefHeight="385.0" />
         <RowConstraints />
     </rowConstraints>
    <children>
    
-       <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vbarPolicy="AS_NEEDED">
+       <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" vbarPolicy="AS_NEEDED">
          <content>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+            <VBox fx:id="allProjectsVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
                <children>
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0">
                      <children>
@@ -29,8 +29,9 @@
                         <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="0.0" visible="false" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Manager" />
                         <Separator layoutX="400.0" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefHeight="50.0" prefWidth="0.0" visible="false" />
-                        <Button fx:id="newProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onAction="#addProjectButtonAction" text="Add Project" textAlignment="CENTER" />
+                        <Button fx:id="newProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0"
+                                maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onAction="#newProjectButtonAction" text="Add Project" textAlignment="CENTER" />
                      </children>
                   </HBox>
                   <Separator prefWidth="600.0" visible="false" />

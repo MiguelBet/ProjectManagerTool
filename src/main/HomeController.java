@@ -26,7 +26,7 @@ public class HomeController implements Initializable
 {
 
     @FXML
-    private VBox projectNameVBox;
+    public VBox allProjectsVBox;
     @FXML
     private VBox projectManagerVBox;
     @FXML
@@ -37,11 +37,12 @@ public class HomeController implements Initializable
     public final static double CELL_MIN_HEIGHT = 40;
 
     @FXML
-    public void addProjectButtonAction(ActionEvent event) throws IOException
+    public void newProjectButtonAction(ActionEvent event) throws IOException
     {
         Stage stage;
         Parent root;
-        if(event.getSource()== newProjectButton){
+        if(event.getSource()== newProjectButton)
+        {
             //get reference to the button's stage
             stage=(Stage) newProjectButton.getScene().getWindow();
             //load up OTHER FXML document
@@ -61,6 +62,8 @@ public class HomeController implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
         //setHeader();
+
+
     }
 
     public void setHeader() {
@@ -89,9 +92,8 @@ public class HomeController implements Initializable
         viewProjectContainer.getChildren().addAll(newProjectButton);
         viewProjectContainer.setAlignment(Pos.CENTER_RIGHT);
         viewProjectContainer.setPadding(new Insets(0, 20, 0, 0));
-        newProjectButton.setOnAction(event -> addNewProject(new SoftwareProject("Test", "Test", 52)));
 
-        projectNameVBox.getChildren().add(projectNameContainer);
+        //projectNameVBox.getChildren().add(projectNameContainer);
         projectManagerVBox.getChildren().add(projectManagerContainer);
         viewButtonsVBox.getChildren().add(viewProjectContainer);
 
@@ -99,26 +101,27 @@ public class HomeController implements Initializable
         Separator separator2 = new Separator();
         Separator separator3 = new Separator();
 
-        projectNameVBox.getChildren().add(separator);
+        //projectNameVBox.getChildren().add(separator);
         projectManagerVBox.getChildren().add(separator2);
         viewButtonsVBox.getChildren().add(separator3);
     }
 
-
-    public void addNewProject(SoftwareProject softwareProject) {
+    @FXML
+    public void addNewProject(SoftwareProject softw) {
         HBox projectNameContainer = new HBox();
         HBox projectManagerContainer = new HBox();
         HBox viewProjectContainer = new HBox();
+        allProjectsVBox = new VBox();
 
         projectNameContainer.setMinHeight(CELL_MIN_HEIGHT);
         projectManagerContainer.setMinHeight(CELL_MIN_HEIGHT);
         viewProjectContainer.setMinHeight(CELL_MIN_HEIGHT);
 
-        Label projectName = new Label(softwareProject.projectName);
-        Label projectManager = new Label(softwareProject.projectManager);
+        Label projectName = new Label(softw.getProjectName());
+        Label projectManager = new Label(softw.getProjectManager());
         Button viewProject = new Button("View");
 
-        projectNameContainer.getChildren().addAll(projectName);
+        /*projectNameContainer.getChildren().addAll(projectName);
         projectNameContainer.setAlignment(Pos.CENTER_LEFT);
         projectNameContainer.setPadding(new Insets(0, 0, 0, 20));
 
@@ -133,12 +136,16 @@ public class HomeController implements Initializable
         Separator separator2 = new Separator();
         Separator separator3 = new Separator();
 
-        projectNameVBox.getChildren().add(projectNameContainer);
-        projectManagerVBox.getChildren().add(projectManagerContainer);
-        viewButtonsVBox.getChildren().add(viewProjectContainer);
+        allProjectsVBox.getChildren().add(projectNameContainer);
+        allProjectsVBox.getChildren().add(projectManagerContainer);
+        allProjectsVBox.getChildren().add(viewProjectContainer);*/
+        HBox newproj = new HBox();
+        newproj.getChildren().addAll(projectName,projectManager,viewProject);
+        allProjectsVBox.getChildren().addAll(newproj);
+        System.out.println(softw.getHoursWorked()+softw.getActualDate()+ softw.getActualDate()+ softw.getCurrentStatus());
 
-        projectNameVBox.getChildren().add(separator);
+        /*allProjectsVBox.getChildren().add(separator);
         projectManagerVBox.getChildren().add(separator2);
-        viewButtonsVBox.getChildren().add(separator3);
+        viewButtonsVBox.getChildren().add(separator3);*/
     }
 }
