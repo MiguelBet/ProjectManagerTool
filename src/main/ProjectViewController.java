@@ -33,8 +33,7 @@ public class ProjectViewController implements Initializable {
 
     }
 
-    public SoftwareProject newSoftwareProject(String name, String manager, String numOfTeam, String current, String Hours, String start, String expected,
-                                              String actual)
+    public SoftwareProject createSoftwareProject()
     {
         SoftwareProject sp = new SoftwareProject(projectNameTextField.getText(),projectManagerTextField.getText(),projectNumberOfTeamMembersTextField.getText(),
                 projectCurrentStatusTextField.getText(),projectHoursTextField.getText(),projectStartDateTextField.getText(),projectExpectedDateTextField.getText(),
@@ -46,19 +45,15 @@ public class ProjectViewController implements Initializable {
     @FXML
     public void addProjectButtonAction(ActionEvent event) throws IOException
     {
-        hc = new HomeController();
-        hc.addNewProject(new SoftwareProject(projectNameTextField.getText(),projectManagerTextField.getText(),projectNumberOfTeamMembersTextField.getText(),
-                projectCurrentStatusTextField.getText(),projectHoursTextField.getText(),projectStartDateTextField.getText(),projectExpectedDateTextField.getText(),
-                projectActualDateTextField.getText()));
-
-
         Stage stage;
         Parent root;
         if(event.getSource()== addProjectButton)
         {
             stage=(Stage) addProjectButton.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
-
+            hc.addNewProject(createSoftwareProject());
+            //I'm having trouble with this line working,
+            //It's suppose to add a new row to the first screen with project name, manager and a button to edit it (a button at first is fine)
         }
         else{
             stage=(Stage) addProjectButton.getScene().getWindow();

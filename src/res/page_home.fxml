@@ -29,7 +29,7 @@
                         <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="0.0" visible="false" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Project Manager" />
                         <Separator layoutX="400.0" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefHeight="50.0" prefWidth="0.0" visible="false" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#newProjectButtonAction" text="Add Project" textAlignment="CENTER" />
+                        <Button fx:id="newProjectButton" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#newProjectButtonAction" text="Add Project" textAlignment="CENTER" />
                      </children>
                   </HBox>
                </children>
