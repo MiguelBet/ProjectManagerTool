@@ -11,9 +11,8 @@ public class SoftwareProject
     public String expectedDate;
     public String actualDate;
 
-    public SoftwareProject(String projectName, String projectManager, String teamMembers,
-                           String currentStatus, String hoursWorked, String startDate,
-                           String expectedDate, String actualDate) {
+    public SoftwareProject(String projectName, String projectManager, String teamMembers, String currentStatus,
+                           String hoursWorked, String startDate, String expectedDate, String actualDate) {
         this.projectName = projectName;
         this.projectManager = projectManager;
         this.teamMembers = teamMembers;
@@ -41,4 +40,5 @@ public class SoftwareProject
     public String getStartDate(){return startDate;}
     public String getExpectedDate(){return expectedDate;}
     public String getActualDate(){return actualDate;}
+
 }
