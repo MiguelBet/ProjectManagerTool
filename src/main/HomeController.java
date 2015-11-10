@@ -46,14 +46,13 @@ public class HomeController implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
 
-
     }
 
 
     @FXML
-    public void addNewProject(SoftwareProject softw) {
-        projectNameLabel.setText(softw.getProjectName());
-        projectManagerLabel.setText(softw.getProjectManager());
+    public void addNewProject(String name, String manager) {
+        projectNameLabel.setText(name);
+        projectManagerLabel.setText(manager);
         allProjectsVBox.getChildren().addAll(projectManagerLabel,projectManagerLabel, new Button("button"));
     }
 }
