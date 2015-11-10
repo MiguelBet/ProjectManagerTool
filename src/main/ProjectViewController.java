@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +26,7 @@ public class ProjectViewController implements Initializable {
     @FXML public TextField projectExpectedDateTextField;
     @FXML public TextField projectActualDateTextField;
     @FXML private Button addProjectButton;
+    @FXML public VBox allProjectsVBox;
     public HomeController hc;
 
     @Override
