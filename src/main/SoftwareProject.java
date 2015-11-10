@@ -24,24 +24,21 @@ public class SoftwareProject
         this.actualDate = actualDate;
     }
 
-    void setProjectName(String name)
-    {
-        this.projectName = name;
-    }
+    void setProjectName(String name) {this.projectName = name;}
+    void setProjectManager(String manager){this.projectManager = manager;}
+    void setHoursWorked(String hoursWorked){this.hoursWorked = hoursWorked;}
+    void setTeamMembers(String teamMembers){this.teamMembers = teamMembers;}
+    void setCurrentStatus(String currentStatus){this.currentStatus = currentStatus;}
+    void setStartDate(String startDate){this.startDate = startDate;}
+    void setExpectedDate(String expectedDate){this.expectedDate = expectedDate;}
+    void setActualDate(String actualDate){this.actualDate = actualDate;}
 
     public String getProjectName() {return projectName;}
-
     public String getProjectManager(){return projectManager;}
-
     public String getHoursWorked(){return hoursWorked;}
-
     public String getTeamMembers(){return teamMembers;}
-
     public String getCurrentStatus(){return currentStatus;}
-
     public String getStartDate(){return startDate;}
-
     public String getExpectedDate(){return expectedDate;}
-
     public String getActualDate(){return actualDate;}
 }
